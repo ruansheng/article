@@ -2,9 +2,12 @@
 layout: default
 title: 我的Blog
 ---
-　　<p>最新文章</p>
-　　<ul>
-　　　　{% for post in site.posts %}
-　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-　　　　{% endfor %}
-　　</ul>
+
+{% for post in site.posts %}
+<h2>{{ post.title }}</h2>
+		<span class="time">{{ post.date | date_to_string }} | 点击量：388次</span>
+		<p>以及这些feature背后的种种有趣故事… 本文暂不讨论。虽然整个过程中我也参与了很多feature的设
+		想和设计，但90%的职责还是开发，所以作为client端的核心开发人员之一,我想跟大家分享这一年来
+		在项目中全面使用C++11以及现代C++风格（Elements of Modern C++ Style）来做开发的种种经
+		验。 我们用的开发环境是VS2010 SP1，该版本已经支持了相当多的C++。<a href="{{ site.baseurl }}{{ post.url }}">【查看文章详情】</a></p>
+{% endfor %}
